@@ -28,7 +28,7 @@ module Falkor
     end
 
     def tick
-      @stage.tick(inputs)
+      @stage.tick
       @stage.draw
 
       update_stage if @next_stage
