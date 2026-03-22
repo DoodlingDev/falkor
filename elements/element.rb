@@ -90,6 +90,10 @@ module Falkor
     def bottom_edge = @y
     def top_edge = @y + h
 
+    def rect_props
+      Geometry.rect_props(self)
+    end
+
     def mid_x
       @x + (@w / 2)
     end
