@@ -14,10 +14,12 @@ module Falkor
     end
 
     def stage = @stage.name
-
     def tick_num = @tick
-
     def inputs = @args.inputs
+    def vh = 720
+    def vw = 1280
+    def cw = vw / 2
+    def ch = vh / 2
 
     def []=(key, value)
       @state[key] = value
@@ -35,7 +37,9 @@ module Falkor
       @tick += 1
     end
 
-    def debug(message)
+    # adds a debug message to the game output
+    def debug(message, config_flag)
+      return unless @state[:debug_config][config_flag]
       @args.outputs.debug << message
     end
 

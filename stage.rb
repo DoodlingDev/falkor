@@ -1,13 +1,14 @@
 module Falkor
   class Stage
-    def initialize(game)
+    def initialize(game, starting_tick)
       @game = game
+      @starting_tick = starting_tick
       @state = {}
     end
 
     def self.create(name, game)
       stage = Utils.constantize(name)
-      stage.new(game)
+      stage.new(game, Kernel.tick_count)
     end
 
     def tick(...)
@@ -32,5 +33,9 @@ module Falkor
       end
       name_buffer.to_sym
     end
+
+    private
+
+    attr_reader :starting_tick
   end
 end

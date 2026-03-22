@@ -14,19 +14,12 @@ module Falkor
     }.freeze
 
     def self.north = COMPASS_ROSE[:north]
-
     def self.north_east = COMPASS_ROSE[:north_east]
-
     def self.east = COMPASS_ROSE[:east]
-
     def self.south_east = COMPASS_ROSE[:south_east]
-
     def self.south = COMPASS_ROSE[:south]
-
     def self.south_west = COMPASS_ROSE[:south_west]
-
     def self.west = COMPASS_ROSE[:west]
-
     def self.north_west = COMPASS_ROSE[:north_west]
 
     def self.direction_vector(direction)
@@ -42,6 +35,8 @@ module Falkor
     # self.move would return the coords without cell
     #   because it's independant of any data in the state
     #   like an instance of cell_map is
+
+    attr_reader :width, :height
 
     def initialize(width, height, &block)
       @width = width
