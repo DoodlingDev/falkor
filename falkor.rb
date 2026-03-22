@@ -5,6 +5,8 @@ require_relative "stage"
 
 require_relative "utils/constantize"
 require_relative "utils/require"
+require_relative "utils/math"
+require_relative "utils/colors"
 
 require_relative "elements/element"
 require_relative "elements/cell_map"

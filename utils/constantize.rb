@@ -1,5 +1,5 @@
 module Falkor
-  class Utils
+  module Utils
     def self.constantize(name)
       chars = name.to_s.chars
       name_buffer = ""
@@ -15,6 +15,11 @@ module Falkor
         end
       end
       Object.const_get name_buffer.to_sym
+    rescue NameError
+      raise <<~MSG
+        [FALKOR] * ERROR: Exception caught in Falkor::Utils.constantize
+        [FALKOR]          Unable to locate constant #{name_buffer}
+      MSG
     end
   end
 end
